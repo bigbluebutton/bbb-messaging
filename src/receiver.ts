@@ -1,3 +1,3 @@
 export interface Receiver {
-    receive(msg: any): void
+  receive(msg: any): void;
 }
