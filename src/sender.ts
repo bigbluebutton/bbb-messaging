@@ -1,3 +1,3 @@
 export interface Sender {
-    send(msg: any): void
+  send(msg: any): void;
 }

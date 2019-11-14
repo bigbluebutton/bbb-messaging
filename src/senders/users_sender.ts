@@ -1,12 +1,9 @@
-import { Sender } from '../sender'
+import { Sender } from '../sender';
 
 export class UsersSender {
-    sender: Sender;
-    
-    constructor(sender: Sender) {
-        this.sender = sender;
+  sender: Sender;
 
-    }
-
-
+  constructor(sender: Sender) {
+    this.sender = sender;
+  }
 }
