@@ -1,7 +1,7 @@
 import { Sender } from '../sender';
 
 export class UsersSender {
-  sender: Sender;
+  private sender: Sender;
 
   constructor(sender: Sender) {
     this.sender = sender;

@@ -7,10 +7,6 @@ export class WhiteboardSender {
     this.sender = sender;
   }
 
-  sendMessage(message: any): void {
-    this.sender.send(message);
-  }
-
   /**
    * Sends a call out to the server to notify the clients that they need to switch multi-user whiteboard on or off
    *
@@ -19,7 +15,7 @@ export class WhiteboardSender {
    * @param whiteboardId
    * @param multiUser
    */
-  modifyAccess(meetingId: string, userId: string, whiteboardId: string, multiUser: boolean): void {
+  public modifyAccess(meetingId: string, userId: string, whiteboardId: string, multiUser: boolean): void {
     const message = {
       header: {
         name: 'ModifyWhiteboardAccessPubMsg',
@@ -41,7 +37,7 @@ export class WhiteboardSender {
    * @param userId
    * @param whiteboardId
    */
-  undoGraphic(meetingId: string, userId: string, whiteboardId: string) {
+  public undoGraphic(meetingId: string, userId: string, whiteboardId: string) {
     const message = {
       header: {
         name: 'UndoWhiteboardPubMsg',
@@ -62,7 +58,7 @@ export class WhiteboardSender {
    * @param userId
    * @param whiteboardId
    */
-  clearBoard(meetingId: string, userId: string, whiteboardId: string) {
+  public clearBoard(meetingId: string, userId: string, whiteboardId: string) {
     const message = {
       header: {
         name: 'ClearWhiteboardPubMsg',
@@ -83,7 +79,7 @@ export class WhiteboardSender {
    * @param userId
    * @param whiteboardId
    */
-  requestAnnotationHistory(meetingId: string, userId: string, whiteboardId: string) {
+  public requestAnnotationHistory(meetingId: string, userId: string, whiteboardId: string) {
     const message = {
       header: {
         name: 'GetWhiteboardAnnotationsReqMsg',
@@ -108,7 +104,7 @@ export class WhiteboardSender {
    * @param annotationType
    * @param annotationInfo
    */
-  sendShape(
+  public sendShape(
     meetingId: string,
     userId: string,
     whiteboardId: string,
@@ -147,7 +143,13 @@ export class WhiteboardSender {
    * @param xPercent
    * @param yPercent
    */
-  sendCursorPosition(meetingId: string, userId: string, whiteboardId: string, xPercent: number, yPercent: number) {
+  public sendCursorPosition(
+    meetingId: string,
+    userId: string,
+    whiteboardId: string,
+    xPercent: number,
+    yPercent: number,
+  ) {
     const message = {
       header: {
         name: 'SendCursorPositionPubMsg',
@@ -163,7 +165,7 @@ export class WhiteboardSender {
     this.sendMessage(message);
   }
 
-  sendClientToServerLatencyTracerMsg(meetingId: string, userId: string, rtt: number) {
+  public sendClientToServerLatencyTracerMsg(meetingId: string, userId: string, rtt: number) {
     const message = {
       header: {
         name: 'ClientToServerLatencyTracerMsg',
@@ -177,5 +179,9 @@ export class WhiteboardSender {
       },
     };
     this.sendMessage(message);
+  }
+
+  private sendMessage(jsonObj: any): void {
+    this.sender.send(jsonObj);
   }
 }
