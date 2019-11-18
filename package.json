@@ -1,5 +1,5 @@
 {
-  "name": "bbb_client_core",
+  "name": "bbb-messaging",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bigbluebutton/bbb_client_core.git"
+    "url": "git+https://github.com/bigbluebutton/bbb-messaging.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bigbluebutton/bbb_client_core/issues"
+    "url": "https://github.com/bigbluebutton/bbb-messaging/issues"
   },
-  "homepage": "https://github.com/bigbluebutton/bbb_client_core#readme",
+  "homepage": "https://github.com/bigbluebutton/bbb-messaging#readme",
   "devDependencies": {
     "@types/jest": "^24.0.22",
     "jest": "^24.9.0",
