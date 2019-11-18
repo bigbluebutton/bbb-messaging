@@ -181,7 +181,7 @@ export class WhiteboardSender {
     this.sendMessage(message);
   }
 
-  private sendMessage(message: any): void {
-    this.sender.send(message);
+  private sendMessage(jsonObj: any): void {
+    this.sender.send(jsonObj);
   }
 }
